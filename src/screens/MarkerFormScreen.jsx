@@ -114,7 +114,7 @@ export default function MarkerFormScreen({route, navigation}) {
 
   return (
     <VStack width="100%" maxW="100%">
-      <AppHeader navigation={navigation} title={"Adicionar Marcadores"} />
+      <AppHeader navigation={navigation} title={`${ marker?.id ? "Editar Marcador" : "Adicionar Marcador" }`} />
       <CurrentPosition location={position} />
 
       <KeyboardAvoidingView>
