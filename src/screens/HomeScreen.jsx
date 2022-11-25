@@ -33,17 +33,15 @@ export default function HomeScreen({route, navigation}) {
     })
   }, []);
 
-  const addLocationButtonListener = () => {
-    navigation.navigate('MarkerForm');
-  }
-
   return (
     <MapContainer>
       <IconButton
         icon={'add'}
         bgColor={styles.textColor}
         position={{ right: 16, bottom: 16 }}
-        onPress={addLocationButtonListener}/>
+        onPress={() => {
+          navigation.navigate('MarkerForm');
+        }}/>
 
       <MapView
         showsUserLocation
