@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from 'styled-components/native';
 import MapView, {Marker, MapMarker} from 'react-native-maps';
+import analytics from '@react-native-firebase/analytics';
 import { useApp } from '../hooks/useApp';
 import DayMap from '../utils/day-map.json';
 import NightMap from '../utils/night-map.json';
 import { useAppGeoLocation } from "../hooks/useAppGelocation";
 import { IconButton } from "../components/FloatButtom";
-import { Avatar } from "native-base";
 import { Markers } from "../components/Markers";
 
 const MapContainer = styled.View`
@@ -32,6 +32,13 @@ export default function HomeScreen({route, navigation}) {
       }
     })
   }, []);
+
+  useEffect(() => {
+    analytics().logEvent('position', {
+      latitude: position.latitude,
+      longitude: position.longitude
+    }).finally();
+  }, [position]);
 
   return (
     <MapContainer>

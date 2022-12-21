@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1019556217423",
+    "project_id": "infnet-rn",
+    "storage_bucket": "infnet-rn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019556217423:android:44aa04789d494bdc02e03a",
+        "android_client_info": {
+          "package_name": "br.com.liercesantos.inf_react_native"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019556217423-qcld20046jbie9c7uainujmio2gae1ii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfM88ycWrLLg4Bco0x8l8eO1oDPOrNYXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019556217423-qcld20046jbie9c7uainujmio2gae1ii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
