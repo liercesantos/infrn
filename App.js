@@ -5,15 +5,19 @@ import BottomNavigator from "./src/routes/BottomNavigator";
 import codePush from 'react-native-code-push';
 import { ApolloProvider } from "@apollo/client";
 import client from "./src/services/apollo";
+import { Provider } from "react-redux";
+import { store } from "./src/services/store";
 
 function AppContainer() {
   return (
     <ApolloProvider client={client}>
-      <AppProvider>
-        <AppTheme>
-          <BottomNavigator />
-        </AppTheme>
-      </AppProvider>
+      <Provider store={store}>
+        <AppProvider>
+          <AppTheme>
+            <BottomNavigator />
+          </AppTheme>
+        </AppProvider>
+      </Provider>
     </ApolloProvider>
   );
 };

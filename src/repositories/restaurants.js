@@ -6,6 +6,7 @@ const RESTAURANTS_LIST = gql`
       total
       business {
         name,
+        price,
         distance,
         rating,
         coordinates {
@@ -13,10 +14,14 @@ const RESTAURANTS_LIST = gql`
           longitude
         },
         categories {
-            alias
+          alias
         },
         hours {
-            is_open_now
+          is_open_now,
+          open {
+              start,
+              end
+          }
         },
         url,
         photos

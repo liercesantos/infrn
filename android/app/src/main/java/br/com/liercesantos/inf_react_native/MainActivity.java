@@ -1,4 +1,4 @@
-package com.inf_react_native;
+package br.com.liercesantos.inf_react_native;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

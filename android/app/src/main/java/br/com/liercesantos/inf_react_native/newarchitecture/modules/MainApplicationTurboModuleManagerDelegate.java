@@ -1,4 +1,4 @@
-package com.inf_react_native.newarchitecture.modules;
+package br.com.liercesantos.inf_react_native.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

@@ -26,9 +26,9 @@ export default function RestaurantsScreen({navigation}) {
 
       { position.latitude
         ? <RestaurantsList
-          navigation={navigation}
-          latitude={position.latitude}
-          longitude={position.longitude} />
+            navigation={navigation}
+            latitude={position.latitude}
+            longitude={position.longitude} />
         : <></>
       }
     </View>

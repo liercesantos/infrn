@@ -43,9 +43,9 @@ const AppImageCardHeader = (props) => {
         <Image source={{ uri: props.uri }} alt="image" />
       </AspectRatio>
       <Center
-        bg={"violet.500"}
+        bg={"primary.700"}
         _dark={{
-          bg: "violet.400"
+          bg: "primary.300"
         }}
         _text={{
           color: "warmGray.50",

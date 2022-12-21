@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components/native';
-import MapView, {Marker, MapMarker} from 'react-native-maps';
-import analytics from '@react-native-firebase/analytics';
+import MapView from 'react-native-maps';
+import { firebase } from "@react-native-firebase/analytics";
 import { useApp } from '../hooks/useApp';
 import DayMap from '../utils/day-map.json';
 import NightMap from '../utils/night-map.json';
@@ -34,11 +34,15 @@ export default function HomeScreen({route, navigation}) {
   }, []);
 
   useEffect(() => {
-    analytics().logEvent('position', {
-      latitude: position.latitude,
-      longitude: position.longitude
-    }).finally();
+    handleAnalytics(position).catch(err => {});
   }, [position]);
+
+  const handleAnalytics = async ({latitude, longitude}) => {
+    await firebase.analytics().logEvent('User_position', {
+      latitude: latitude,
+      longitude: longitude
+    });
+  }
 
   return (
     <MapContainer>

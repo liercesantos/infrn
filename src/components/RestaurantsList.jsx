@@ -20,7 +20,7 @@ const RestaurantsList = ({latitude, longitude, navigation}) => {
   }
 
   const RestaurantCard = ({index, item}) =>
-    <RestaurantRow restaurant={item} navigation={navigation} />;
+    <RestaurantRow data={item} navigation={navigation} />;
 
   useEffect(() => {
     getRestaurants(params).then(res => { });
