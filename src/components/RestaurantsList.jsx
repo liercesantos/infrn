@@ -41,7 +41,7 @@ const RestaurantsList = ({latitude, longitude, navigation}) => {
             }
           })}
           data={data.search.business}
-          renderItem={RestaurantCard} /> : <Text style={{color: "#000"}}>Not working!</Text>
+          renderItem={RestaurantCard} /> : null
       }
     </Fragment>
   );

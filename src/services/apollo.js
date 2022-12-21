@@ -1,10 +1,11 @@
 import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 import { ApolloLink } from "apollo-link";
+import Config from "react-native-config";
 
 const restaurants = new HttpLink({
   uri: 'https://api.yelp.com/v3/graphql',
   headers: {
-    Authorization: "Bearer Bjblka5mZ0ujB-bJaTpauQUC27Ru390-2SlqG0HrCe7m1DLsi_0bRYt0-3nkN5w4uJcGQXOrLwyM3vrO7XKedK0rLE0GEzKX4cZ6sy8CVDBJMRZNyJuxsP39E_qgY3Yx",
+    Authorization: `Bearer ${Config.YELP_TOKEN}`,
   },
 });
 

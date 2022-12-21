@@ -69,7 +69,7 @@ export default function BottomNavigator(){
           options={{
             headerShown: false,
             tabBarIcon({color, size}) {
-              return <FaIcon name="utensils" size={size} color={color} />;
+              return <Icon name="local-dining" size={size} color={color} />;
             },
             tabBarLabel(){
               return '';

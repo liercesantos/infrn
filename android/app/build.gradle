@@ -1,8 +1,16 @@
+project.ext.envConfigFiles = [
+  release: ".env",
+  dev: ".env",
+  test: ".env",
+  debug: ".env"
+];
 apply plugin: "com.android.application"
 apply plugin: 'com.google.gms.google-services'
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
+
 
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
@@ -143,6 +151,7 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+        resValue "string", "build_config_package", "br.com.liercesantos.inf_react_native"
 
         if (isNewArchitectureEnabled()) {
             // We configure the CMake build only if you decide to opt-in for the New Architecture.
@@ -261,6 +270,8 @@ android {
 }
 
 dependencies {
+		implementation project(':react-native-config')
+
 		implementation platform('com.google.firebase:firebase-bom:31.1.1')
 
 		implementation 'com.google.firebase:firebase-analytics'
